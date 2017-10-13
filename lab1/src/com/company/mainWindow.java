@@ -1,3 +1,4 @@
+//mainWindow.2.4
 package com.company;
 
 import java.awt.EventQueue;
@@ -78,13 +79,13 @@ public class mainWindow {
 				        all = all.replaceAll("[^a-z^A-Z]", " ");
 				        all = all.toLowerCase();
 				        String[] words=all.split("\\s+");
-				        //µ±¿ªÍ·ÊÇ¿Õ¸ñÊ±£¬Ò»ºÅ×Ö·û»á±ä³É¡°¡±¿Õ×Ö·û£¬¶øÕâÀï´¦Àí»»ÐÐÊ±£¬µÚÒ»ÐÐ»á×Ô¶¯Ìí¼ÓÒ»¸ö¿Õ¸ñ
-				        //ËùÒÔwords[0]±Ø¶¨Îª¡°¡±
+				        //ï¿½ï¿½ï¿½ï¿½Í·ï¿½Ç¿Õ¸ï¿½Ê±ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½É¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï´¦ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ð»ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Õ¸ï¿½
+				        //ï¿½ï¿½ï¿½ï¿½words[0]ï¿½Ø¶ï¿½Îªï¿½ï¿½ï¿½ï¿½
 				        String[] input=new String[words.length-1];
 				        for(int i=0;i<words.length-1;i++)
 				            input[i]=words[i+1];
 				        graph=new Graph(input);
-				        JOptionPane.showMessageDialog(null, "½¨Í¼³É¹¦");
+				        JOptionPane.showMessageDialog(null, "ï¿½ï¿½Í¼ï¿½É¹ï¿½");
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -111,7 +112,7 @@ public class mainWindow {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (graph==null) {
-					JOptionPane.showMessageDialog(null, "µ±Ç°Îª¿ÕÍ¼£¬ÇëÏÈ½¨Í¼£¡","´íÎó",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½Ç°Îªï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½È½ï¿½Í¼ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
 				}
 				sevenWindow.main(null, graph, frame);
 				frame.setVisible(false);

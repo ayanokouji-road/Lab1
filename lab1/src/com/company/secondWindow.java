@@ -1,3 +1,4 @@
+//secondWindow.2.4
 package com.company;
 
 import java.awt.EventQueue;
@@ -72,12 +73,12 @@ public class secondWindow {
 				String word1 = textField.getText();
 				String word2 = textField_1.getText();
 				if (word1==null||word2==null) {
-					JOptionPane.showMessageDialog(null, "Á¬½Ó´Ê²»¿ÉÎª¿Õ","´íÎó",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½Ó´Ê²ï¿½ï¿½ï¿½Îªï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
 				}
 				else{
 					String[] bridges=g.queryBridgeWords(word1, word2);
 					if (bridges.length==0) {
-						JOptionPane.showMessageDialog(null, word1+"ºÍ"+word2+"Ã»ÓÐÇÅ½Ó´Ê");
+						JOptionPane.showMessageDialog(null, word1+"ï¿½ï¿½"+word2+"Ã»ï¿½ï¿½ï¿½Å½Ó´ï¿½");
 					}
 					else{
 						String result=new String();
@@ -85,7 +86,7 @@ public class secondWindow {
 							if (i!=bridges.length-1) result+=bridges[i]+",";
 							else result+=bridges[i];
 						}
-						JOptionPane.showMessageDialog(null, word1+"ºÍ"+word2+"ÇÅ½Ó´ÊÎª£º"+result);
+						JOptionPane.showMessageDialog(null, word1+"ï¿½ï¿½"+word2+"ï¿½Å½Ó´ï¿½Îªï¿½ï¿½"+result);
 					}
 				}
 			}
