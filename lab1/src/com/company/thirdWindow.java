@@ -1,3 +1,4 @@
+//thirdWindow.2.4
 package com.company;
 
 import java.awt.EventQueue;
@@ -62,7 +63,7 @@ public class thirdWindow {
 			public void actionPerformed(ActionEvent e) {
 				String text=textField.getText();
 				String newText=g.generateNewText(text);
-				JOptionPane.showMessageDialog(null, "Éú³ÉµÄÐÂÎÄ±¾Îª£º"+newText);
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½ï¿½Ä±ï¿½Îªï¿½ï¿½"+newText);
 			}
 		});
 		btnNewButton.setBounds(84, 149, 113, 27);

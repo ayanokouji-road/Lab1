@@ -1,3 +1,4 @@
+//forthWindow.2.4
 package com.company;
 
 import java.awt.EventQueue;
@@ -73,7 +74,7 @@ public class forthWindow {
 				String word1 = textField.getText();
 				String word2 = textField_1.getText();
 				if (!g.isTheWordExisted(word1)||!g.isTheWordExisted(word2)) {
-					JOptionPane.showMessageDialog(null, "ÊäÈëµÄµ¥´Ê²»ÔÚÍ¼ÖÐ£¬ÇëÖØÐÂÈ·ÈÏÄúµÄÊäÈë","´íÎó",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½Ê²ï¿½ï¿½ï¿½Í¼ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
 				}
 				else{
 					String[] result=g.calcShortestPath(word1, word2);
