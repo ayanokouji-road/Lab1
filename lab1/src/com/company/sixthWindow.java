@@ -1,3 +1,4 @@
+//sixthWindow.2.7
 package com.company;
 
 import java.awt.EventQueue;
@@ -76,7 +77,7 @@ public class sixthWindow {
 					BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 					bufferedWriter.write(path);
 					bufferedWriter.close();
-					JOptionPane.showMessageDialog(null, "±£´æ³É¹¦");
+					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
 					f.setVisible(true);
 					frame.dispose();
 				} catch (IOException e) {
