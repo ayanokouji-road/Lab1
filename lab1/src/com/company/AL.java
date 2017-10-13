@@ -1,3 +1,4 @@
+//AL.1.3
 package com.company;
 
 import java.awt.*;
@@ -6,19 +7,19 @@ public class AL
 {
     public static void drawAL(int sx, int sy, int ex, int ey,Graphics2D g2)
     {
-        double  H  =   6 ;  // ¼ýÍ·¸ß¶È
-        double  L  =   6 ; // µ×±ßµÄÒ»°ë
+        double  H  =   6 ;  // ï¿½ï¿½Í·ï¿½ß¶ï¿½
+        double  L  =   6 ; // ï¿½×±ßµï¿½Ò»ï¿½ï¿½
         int  x3  =   0 ;
         int  y3  =   0 ;
         int  x4  =   0 ;
         int  y4  =   0 ;
-        double  awrad  =  Math.atan(L  /  H);  // ¼ýÍ·½Ç¶È
-        double  arraow_len  =  Math.sqrt(L  *  L  +  H  *  H); // ¼ýÍ·µÄ³¤¶È
+        double  awrad  =  Math.atan(L  /  H);  // ï¿½ï¿½Í·ï¿½Ç¶ï¿½
+        double  arraow_len  =  Math.sqrt(L  *  L  +  H  *  H); // ï¿½ï¿½Í·ï¿½Ä³ï¿½ï¿½ï¿½
         double [] arrXY_1  =  rotateVec(ex  -  sx, ey  -  sy, awrad,  true , arraow_len);
         double [] arrXY_2  =  rotateVec(ex  -  sx, ey  -  sy,  - awrad,  true , arraow_len);
-        double  x_3  =  ex  -  2*arrXY_1[ 0 ];  // (x3,y3)ÊÇµÚÒ»¶Ëµã
+        double  x_3  =  ex  -  2*arrXY_1[ 0 ];  // (x3,y3)ï¿½Çµï¿½Ò»ï¿½Ëµï¿½
         double  y_3  =  ey  -  2*arrXY_1[ 1 ];
-        double  x_4  =  ex  -  2*arrXY_2[ 0 ]; // (x4,y4)ÊÇµÚ¶þ¶Ëµã
+        double  x_4  =  ex  -  2*arrXY_2[ 0 ]; // (x4,y4)ï¿½ÇµÚ¶ï¿½ï¿½Ëµï¿½
         double  y_4  =  ey  -  2*arrXY_2[ 1 ];
         Double X3  =   new  Double(x_3);
         x3  =  X3.intValue();
@@ -29,17 +30,17 @@ public class AL
         Double Y4  =   new  Double(y_4);
         y4  =  Y4.intValue();
         // g.setColor(SWT.COLOR_WHITE);
-        // »­Ïß
+        // ï¿½ï¿½ï¿½ï¿½
         g2.drawLine(sx, sy, ex, ey);
-        // »­¼ýÍ·µÄÒ»°ë
+        // ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½Ò»ï¿½ï¿½
         g2.drawLine((ex), (ey), x3, y3);
-        // »­¼ýÍ·µÄÁíÒ»°ë
+        // ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½
         g2.drawLine((ex), (ey), x4, y4);
     }
     public  static double [] rotateVec( int  px,  int  py,  double  ang,  boolean  isChLen, double  newLen)
     {
         double  mathstr[]  =   new   double [ 2 ];
-        // Ê¸Á¿Ðý×ªº¯Êý£¬²ÎÊýº¬Òå·Ö±ðÊÇx·ÖÁ¿¡¢y·ÖÁ¿¡¢Ðý×ª½Ç¡¢ÊÇ·ñ¸Ä±ä³¤¶È¡¢ÐÂ³¤¶È
+        // Ê¸ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½Ç¡ï¿½ï¿½Ç·ï¿½Ä±ä³¤ï¿½È¡ï¿½ï¿½Â³ï¿½ï¿½ï¿½
         double  vx  =  px  *  Math.cos(ang)  -  py  *  Math.sin(ang);
         double  vy  =  px  *  Math.sin(ang)  +  py  *  Math.cos(ang);
         if  (isChLen)
