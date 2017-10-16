@@ -1,7 +1,3 @@
-
-//forthWindow.2.5
-//forthWindow.2.4
-
 package com.company;
 
 import java.awt.EventQueue;
@@ -14,12 +10,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class forthWindow {
+public class secondWindow {
 
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
-
 	/**
 	 * Launch the application.
 	 */
@@ -27,7 +22,7 @@ public class forthWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					forthWindow window = new forthWindow(g,f);
+					secondWindow window = new secondWindow(g,f);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +34,7 @@ public class forthWindow {
 	/**
 	 * Create the application.
 	 */
-	public forthWindow(Graph g,JFrame f) {
+	public secondWindow(Graph g,JFrame f) {
 		initialize(g,f);
 	}
 
@@ -48,60 +43,65 @@ public class forthWindow {
 	 */
 	private void initialize(Graph g,JFrame f) {
 		frame = new JFrame();
-		frame.setTitle("\u4E00\u5BF9\u4E00\u6700\u77ED\u8DEF");
+		frame.setTitle("\u67E5\u8BE2\u6865\u63A5\u8BCD");
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u8BF7\u8F93\u5165\u5355\u8BCD1");
-		lblNewLabel.setBounds(14, 84, 90, 18);
+		JLabel lblNewLabel = new JLabel("\u4E00\u53F7\u6865\u63A5\u8BCD");
+		lblNewLabel.setBounds(79, 67, 96, 18);
 		frame.getContentPane().add(lblNewLabel);
 		
+		JLabel lblNewLabel_1 = new JLabel("\u4E8C\u53F7\u6865\u63A5\u8BCD");
+		lblNewLabel_1.setBounds(79, 106, 96, 18);
+		frame.getContentPane().add(lblNewLabel_1);
+		
 		textField = new JTextField();
-		textField.setBounds(111, 81, 92, 24);
+		textField.setBounds(201, 64, 136, 24);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u8BF7\u8F93\u5165\u5355\u8BCD2");
-		lblNewLabel_1.setBounds(217, 84, 90, 18);
-		frame.getContentPane().add(lblNewLabel_1);
-		
 		textField_1 = new JTextField();
-		textField_1.setBounds(332, 81, 86, 24);
+		textField_1.setBounds(201, 103, 136, 24);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnNewButton = new JButton("\u5C55\u793A\u6700\u77ED\u8DEF");
+		JButton btnNewButton = new JButton("\u67E5\u8BE2");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				String word1 = textField.getText();
 				String word2 = textField_1.getText();
-				if (!g.isTheWordExisted(word1)||!g.isTheWordExisted(word2)) {
-
-					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½Ê²ï¿½ï¿½ï¿½Í¼ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
-
-					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½Ê²ï¿½ï¿½ï¿½Í¼ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","ï¿½ï¿½ï¿½ï¿½",JOptionPane.ERROR_MESSAGE);
-
+				if (word1==null||word2==null) {
+					JOptionPane.showMessageDialog(null, "Á¬½Ó´Ê²»¿ÉÎª¿Õ","´íÎó",JOptionPane.ERROR_MESSAGE);
 				}
 				else{
-					String[] result=g.calcShortestPath(word1, word2);
-					g.show_path_all(result, frame);
-					frame.setVisible(false);
+					String[] bridges=g.queryBridgeWords(word1, word2);
+					if (bridges.length==0) {
+						JOptionPane.showMessageDialog(null, word1+"ºÍ"+word2+"Ã»ÓÐÇÅ½Ó´Ê");
+					}
+					else{
+						String result=new String();
+						for(int i=0;i<bridges.length;i++){
+							if (i!=bridges.length-1) result+=bridges[i]+",";
+							else result+=bridges[i];
+						}
+						JOptionPane.showMessageDialog(null, word1+"ºÍ"+word2+"ÇÅ½Ó´ÊÎª£º"+result);
+					}
 				}
-				
 			}
 		});
-		btnNewButton.setBounds(76, 164, 113, 27);
+		btnNewButton.setBounds(84, 163, 113, 27);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("\u8FD4\u56DE");
 		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				f.setVisible(true);
 				frame.dispose();
 			}
 		});
-		btnNewButton_1.setBounds(268, 164, 113, 27);
+		btnNewButton_1.setBounds(224, 163, 113, 27);
 		frame.getContentPane().add(btnNewButton_1);
 	}
+
 }

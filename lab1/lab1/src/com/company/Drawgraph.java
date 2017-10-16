@@ -1,6 +1,4 @@
-
 //Drawgraph.1.3
-
 package com.company;
 
 import javax.imageio.ImageIO;
@@ -27,11 +25,7 @@ public class Drawgraph extends JFrame
     public Drawgraph(ArrayList<String> words,int [][] edges,String path,JFrame f)
     {
         super();
-
         button= new Button("���沢����");
-
-        button= new Button("���沢����");
-
         JPanel jPanel=(JPanel)this.getContentPane();
         jPanel.setLayout(null);
         button.setBounds(1600, 800, 100, 30);
@@ -46,11 +40,7 @@ public class Drawgraph extends JFrame
         this.edges=edges;
         this.words=words;
         this.path=path;
-
         setTitle("����ͼ");
-
-        setTitle("����ͼ");
-
         setBounds(0,0,2000,1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(button);
@@ -68,19 +58,11 @@ public class Drawgraph extends JFrame
     public void paint(Graphics g)
     {
         super.paint(g);
-
         Graphics2D graphics = (Graphics2D) g;  //ת��graphics ΪGraphics2D����
         Font font=new Font("����",Font.PLAIN,12); // �����������
         graphics.setFont(font);
         BasicStroke bk=new BasicStroke(10,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL); //�Զ���ʻ�����
         graphics.setStroke(bk);  //����graphics�ıʻ�����;
-
-        Graphics2D graphics = (Graphics2D) g;  //ת��graphics ΪGraphics2D����
-        Font font=new Font("����",Font.PLAIN,12); // �����������
-        graphics.setFont(font);
-        BasicStroke bk=new BasicStroke(10,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL); //�Զ���ʻ�����
-        graphics.setStroke(bk);  //����graphics�ıʻ�����;
-
         int n=words.size();
         int RR=400;
         double R=50,P;

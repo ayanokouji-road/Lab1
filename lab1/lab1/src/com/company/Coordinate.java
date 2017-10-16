@@ -1,7 +1,4 @@
-
 //Coordinate.1.3
-
-
 package com.company;
 
 public class Coordinate

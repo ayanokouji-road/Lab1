@@ -1,6 +1,3 @@
-
-//sevenWindow.2.7
-
 package com.company;
 
 import java.awt.EventQueue;
@@ -12,12 +9,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class sevenWindow {
+public class fifthWindow {
 
 	private JFrame frame;
 	private JTextField textField;
-private int r;
-	private int p;
 
 	/**
 	 * Launch the application.
@@ -26,7 +21,7 @@ private int r;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					sevenWindow window = new sevenWindow(g,f);
+					fifthWindow window = new fifthWindow(g,f);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +33,7 @@ private int r;
 	/**
 	 * Create the application.
 	 */
-	public sevenWindow(Graph g,JFrame f) {
+	public fifthWindow(Graph g,JFrame f) {
 		initialize(g,f);
 	}
 
@@ -47,27 +42,45 @@ private int r;
 	 */
 	private void initialize(Graph g,JFrame f) {
 		frame = new JFrame();
+		frame.setTitle("\u4E00\u5BF9\u591A\u6700\u77ED\u8DEF");
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u8BF7\u6307\u5B9A\u4FDD\u5B58\u5730\u5740");
-		lblNewLabel.setBounds(61, 96, 124, 18);
+		JLabel lblNewLabel = new JLabel("\u8BF7\u8F93\u5165\u5355\u8BCD1");
+		lblNewLabel.setBounds(78, 84, 91, 18);
 		frame.getContentPane().add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(199, 93, 140, 24);
+		textField.setBounds(183, 81, 152, 24);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("\u7EE7\u7EED");
+		JButton btnNewButton = new JButton("\u751F\u6210\u6700\u77ED\u8DEF");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				frame.dispose();
-				g.show(textField.getText(), f);
+			public void actionPerformed(ActionEvent e) {
+				String string = textField.getText();
+				String[] result = g.calcShortestPathOfAll(string);
+				for(int i=0;i<result.length;i++)
+				{
+					System.out.println(result[i]);
+				}
+				g.show_path_all(result, frame);
+				frame.setVisible(false);
 			}
 		});
-		btnNewButton.setBounds(145, 158, 113, 27);
+		btnNewButton.setBounds(84, 155, 113, 27);
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\u8FD4\u56DE");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				f.setVisible(true);
+				frame.dispose();
+			}
+		});
+		btnNewButton_1.setBounds(211, 155, 113, 27);
+		frame.getContentPane().add(btnNewButton_1);
 	}
+
 }

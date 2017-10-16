@@ -7,14 +7,10 @@ import javax.swing.JFrame;
 public class Graph
 {
     int n;
-
-=======
-    int t;
-
     public ArrayList<String> words;
     public int [][] edges;
     Map<String,Integer> mark = new HashMap<String, Integer>();
-    private Vector<int[]> uvtemp = new Vector<int[]>();//ï¿½ï¿½ï¿½Ú¼ï¿½Â¼dijsktraï¿½ï¿½dist(v)-dist(u) = c(u,v)ï¿½Ä±ï¿½ 
+    private Vector<int[]> uvtemp = new Vector<int[]>();//ÓÃÓÚ¼ÇÂ¼dijsktraÖĞdist(v)-dist(u) = c(u,v)µÄ±ß 
     public int[] lengths;
     Graph(String[] strings)
     {
@@ -102,14 +98,14 @@ public class Graph
       new DrawpathAll(words,edges,paths, f,lengths);
   }
     public void showTheGraphByConsole(){
-        if( n == 0 ) System.out.println("ï¿½ï¿½Ç°ï¿½Ú½Ó±ï¿½Îªï¿½Õ£ï¿½");
+        if( n == 0 ) System.out.println("µ±Ç°ÁÚ½Ó±íÎª¿Õ£¡");
         else{
             /*for (Map.Entry<String,Integer> e:mark.entrySet()) {
-                System.out.println(e.getValue()+"ï¿½Åµï¿½ï¿½ï¿½:"+e.getKey());
+                System.out.println(e.getValue()+"ºÅµ¥´Ê:"+e.getKey());
             }*/
             int i=0;
             for (String e:words) {
-                System.out.println((i++)+"ï¿½Åµï¿½ï¿½ï¿½:"+e);
+                System.out.println((i++)+"ºÅµ¥´Ê:"+e);
             }
             for (int j = 0; j < n; j++) {
                 for (int k = 0; k < n; k++) {
@@ -124,7 +120,7 @@ public class Graph
          Vector<String> returnItem = new Vector<String>();
          if(!mark.containsKey(word1))
          {
-        	 System.out.println("ï¿½ï¿½Ç°Í¼ï¿½Ğ²ï¿½ï¿½ï¿½ï¿½ï¿½"+word1+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+        	 System.out.println("µ±Ç°Í¼ÖĞ²»´æÔÚ"+word1+"Çë¼ì²éÄãµÄÊäÈë");
         	 return null;
          }
          else{
@@ -154,7 +150,7 @@ public class Graph
              while(!priorityQueue.isEmpty()){
                  int temp=priorityQueue.peek();
                  for (int i = 0; i < n; i++) relex(temp,i,edgesTemp,pathlength,path,priorityQueue);
-                 priorityQueue.poll();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pollï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï£¬ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½peekï¿½ï¿½ï¿½ï£¬ï¿½ï¿½ï¿½È¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½pathlengthï¿½ï¿½Öµï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É³ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½pathlengthï¿½ï¿½Öµï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+                 priorityQueue.poll();//ÕâÀï±ØĞë°ÑÕâ¸öpoll·ÅÔÚÕâÀï£¬ÒòÎªÈç¹û·ÅÔÚpeekÄÇÀï£¬ÓÅÏÈ¶ÓÁĞÔÚÖØÅÅÊÇ¸ù¾İpathlengthµÄÖµµÄ£¬ÌÈÈôÔÚËÉ³ÚÇ°µ¯³ö¼´ÔÚÄÇÊ±½øĞĞÖØÅÄ£¬pathlengthµÄÖµ»¹Ã»¸úĞÂ
              }
              for (int i = 0; i < n; i++) {
                  if (path[i]==-1||i==source) continue;
@@ -171,14 +167,14 @@ public class Graph
                      }
                  }
              }
-            returnItem.add(result[aim]);//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Â·
-            String[] spiltItem = result[aim].split("\\s+");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Ê·Ö½ï¿½
-            HashMap<String, Integer> hashMap= new HashMap<String,Integer>();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½
+            returnItem.add(result[aim]);//¼ÓÈëÒ»Ìõ×î¶ÌÂ·
+            String[] spiltItem = result[aim].split("\\s+");//½«¸Ã×î¶ÌÂ·°´µ¥´Ê·Ö½â
+            HashMap<String, Integer> hashMap= new HashMap<String,Integer>();//½¨Á¢¹şÏ£±í
             for(int i=0;i<spiltItem.length;i++){
             	hashMap.put(spiltItem[i], i);
             }
             for (int[] e : uvtemp) {
-				if (hashMap.containsKey(words.get(e[1]))) {//ï¿½Ğ¶Ï¸Ã£ï¿½vï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ï¿½Ç£ï¿½ï¿½ò½«µï¿½Ç°ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½v->aimï¿½Î½ï¿½ï¿½ï¿½sourceï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½Ù½ï¿½ï¿½Ï±ï¿½(u,v)ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½Â·
+				if (hashMap.containsKey(words.get(e[1]))) {//ÅĞ¶Ï¸Ã£¨v£©ÊÇ·ñÔÚ×î¶ÌÂ·¾¶ÉÏ£¬ÈôÊÇ£¬Ôò½«µ±Ç°×î¶ÌÂ·¾¶ÉÏv->aim¶Î½ÓÉÏsourceµ½u¶Î×î¶ÌÂ·¾¶ÔÙ½ÓÉÏ±ß(u,v)¾ÍÊÇÒ»ÌõĞÂµÄ×î¶ÌÂ·
 					System.out.println(words.get(e[0])+"->"+words.get(e[1]));
 					String newPath = result[e[0]];
 					int flag=0;
@@ -197,14 +193,14 @@ public class Graph
             	results[i]=new String(returnItem.get(i));
             lengths=new int[1];
             lengths[0]=pathlength[aim];
-            uvtemp.clear();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë½«È«ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â´Îµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(u,v)
+            uvtemp.clear();//ÕâÀï±ØĞë½«È«¾Ö±äÁ¿Çå¿Õ£¬·ñÔòÏÂ´Îµ÷ÓÃÊ±»á¼ÌĞøÊ¹ÓÃÉÏ´ÎÒÅÁôµÄ(u,v)
             return results;
          }
     }
     public String[] calcShortestPathOfAll(String word1){
         String[] result=new String[n];
         if(!mark.containsKey(word1))
-            System.out.println("ï¿½ï¿½Ç°Í¼ï¿½Ğ²ï¿½ï¿½ï¿½ï¿½ï¿½"+word1+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+            System.out.println("µ±Ç°Í¼ÖĞ²»´æÔÚ"+word1+"Çë¼ì²éÄãµÄÊäÈë");
         else{
             int source=mark.get(word1);
             int[] pathlength=new int[n];
@@ -231,7 +227,7 @@ public class Graph
             while(!priorityQueue.isEmpty()){
                 int temp=priorityQueue.peek();
                 for (int i = 0; i < n; i++) relex(temp,i,edgesTemp,pathlength,path,priorityQueue);
-                priorityQueue.poll();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pollï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï£¬ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½peekï¿½ï¿½ï¿½ï£¬ï¿½ï¿½ï¿½È¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½pathlengthï¿½ï¿½Öµï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É³ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½pathlengthï¿½ï¿½Öµï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½
+                priorityQueue.poll();//ÕâÀï±ØĞë°ÑÕâ¸öpoll·ÅÔÚÕâÀï£¬ÒòÎªÈç¹û·ÅÔÚpeekÄÇÀï£¬ÓÅÏÈ¶ÓÁĞÔÚÖØÅÅÊÇ¸ù¾İpathlengthµÄÖµµÄ£¬ÌÈÈôÔÚËÉ³ÚÇ°µ¯³ö¼´ÔÚÄÇÊ±½øĞĞÖØÅÄ£¬pathlengthµÄÖµ»¹Ã»¸úĞÂ
             }
             for (int i = 0; i < n; i++) {
                 if (path[i]==-1||i==source) continue;
@@ -254,23 +250,23 @@ public class Graph
         return result;
     }
     public String randomWalk() {
-        if (n == 0) return null;//ï¿½ï¿½Îªï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½kong
+        if (n == 0) return null;//ÈôÎª¿Õ£¬·µ»Økong
         int rand=(int)(Math.random()*n);
         boolean[][] isEdgeVisited=new boolean[n][n];
-        for (int i= 0 ;i< n ;i++)//ï¿½ï¿½ï¿½ï¿½ï¿½ß·ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Í¬Ê±ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ú½Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½Îª0ï¿½ï¿½Ôªï¿½Ø±ï¿½Îªfalse,Í¬Ê±ï¿½Úºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½ß±ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Îªfalse
+        for (int i= 0 ;i< n ;i++)//½¨Á¢±ß·ÃÎÊ¾ØÕó£¬Í¬Ê±³õÊ¼»¯£¬ÁÚ½Ó¾ØÕóÖĞÎª0µÄÔªËØ±êÎªfalse,Í¬Ê±ÔÚºóĞò´¦ÀíÖĞ£¬µ±±ß±»·ÃÎÊ£¬½«ÏàÓ¦¸ÄÎªfalse
             for(int j= 0 ;j <n ;j++)
                 if (edges[i][j]==0) isEdgeVisited[i][j]=false;
                 else isEdgeVisited[i][j]=true;
         return words.get(rand)+" "+DFSByEdge(rand,isEdgeVisited);
     }
-    private String DFSByEdge(int sourceNode,boolean[][] isEdgeVisited){//ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ñ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶Ï¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½Ôµï¿½
-        Vector<Integer> chooseEnable=new Vector<Integer>();//ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½
+    private String DFSByEdge(int sourceNode,boolean[][] isEdgeVisited){//ÒòÎªÕâÕâ¸öÎÊÌâÖĞ£¬Ëæ»úÓÎ×ßÖ»»á³öÏÖÒ»´ÎÉîËÑ£¬ËùÒÔÕâ¸öÅĞ¶Ï¾ØÕóÉèÖÃÎª²ÎÊıÊÇ¿ÉÒÔµÄ
+        Vector<Integer> chooseEnable=new Vector<Integer>();//¿ÉÑ¡¶¥µã
         for(int i=0;i<n;i++)
             if (isEdgeVisited[sourceNode][i]==true)
                 chooseEnable.add(i);
-        if (chooseEnable.isEmpty()) return "";//ï¿½ï¿½ï¿½Ã½Úµã²»ï¿½ï¿½ï¿½Ğ³ï¿½ï¿½ß£ï¿½ï¿½ï¿½Êµï¿½ï¿½Ã¿ï¿½Î·ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¶Ï¾ï¿½ï¿½ï¿½ï¿½ï¿½É¾È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
+        if (chooseEnable.isEmpty()) return "";//Èô¸Ã½Úµã²»ÔÙÓĞ³ö±ß£¬ÊÂÊµÉÏÃ¿´Î·ÃÎÊÒ»Ìõ±ß½«Æä´ÓÅĞ¶Ï¾ØÕóÖĞÉ¾È¥£¬¹ÊÁ½ÖÖÇé¿öµİ¹é½áÊøÌõ¼şÊÇÒ»ÑùµÄ
         int length=chooseEnable.size();
-        int aimNode=(int)(Math.random()*length);//ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ÊµÄ¶ï¿½ï¿½ï¿½
+        int aimNode=(int)(Math.random()*length);//Ëæ»úÑ¡ÔñÏÂÒ»¸ö·ÃÎÊµÄ¶¥µã
         isEdgeVisited[sourceNode][chooseEnable.get(aimNode)]=false;
         return words.get(chooseEnable.get(aimNode))+" "+DFSByEdge(chooseEnable.get(aimNode),isEdgeVisited);
     }

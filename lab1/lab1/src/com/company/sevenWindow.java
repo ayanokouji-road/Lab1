@@ -1,6 +1,3 @@
-
-//sevenWindow.2.7
-
 package com.company;
 
 import java.awt.EventQueue;
@@ -16,8 +13,6 @@ public class sevenWindow {
 
 	private JFrame frame;
 	private JTextField textField;
-private int r;
-	private int p;
 
 	/**
 	 * Launch the application.

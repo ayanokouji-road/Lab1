@@ -1,6 +1,3 @@
-
-//sixthWindow.2.7
-
 package com.company;
 
 import java.awt.EventQueue;
@@ -27,11 +24,7 @@ public class sixthWindow {
 	private JFrame frame;
 	private JTextField textField;
 	private JFileChooser fileChooser;
-
 	/**
-
-	private int r;
-
 	 * Launch the application.
 	 */
 	public static void main(String[] args,Graph g,JFrame f,String path) {
@@ -83,11 +76,7 @@ public class sixthWindow {
 					BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 					bufferedWriter.write(path);
 					bufferedWriter.close();
-
-					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
-
-					JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½É¹ï¿½");
-
+					JOptionPane.showMessageDialog(null, "±£´æ³É¹¦");
 					f.setVisible(true);
 					frame.dispose();
 				} catch (IOException e) {
