@@ -24,6 +24,7 @@ public class sixthWindow {
 	private JFrame frame;
 	private JTextField textField;
 	private JFileChooser fileChooser;
+	private double r;
 	/**
 	 * Launch the application.
 	 */
