@@ -1,3 +1,4 @@
+//Coordinate
 package com.company;
 
 public class Coordinate

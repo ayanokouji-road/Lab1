@@ -1,3 +1,4 @@
+//Drawgraph
 package com.company;
 
 import javax.imageio.ImageIO;
@@ -24,7 +25,7 @@ public class Drawgraph extends JFrame
     public Drawgraph(ArrayList<String> words,int [][] edges,String path,JFrame f)
     {
         super();
-        button= new Button("±£´æ²¢·µ»Ø");
+        button= new Button("ï¿½ï¿½ï¿½æ²¢ï¿½ï¿½ï¿½ï¿½");
         JPanel jPanel=(JPanel)this.getContentPane();
         jPanel.setLayout(null);
         button.setBounds(1600, 800, 100, 30);
@@ -39,7 +40,7 @@ public class Drawgraph extends JFrame
         this.edges=edges;
         this.words=words;
         this.path=path;
-        setTitle("»æÖÆÍ¼");
+        setTitle("ï¿½ï¿½ï¿½ï¿½Í¼");
         setBounds(0,0,2000,1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(button);
@@ -57,11 +58,11 @@ public class Drawgraph extends JFrame
     public void paint(Graphics g)
     {
         super.paint(g);
-        Graphics2D graphics = (Graphics2D) g;  //×ª»¯graphics ÎªGraphics2D¶ÔÏó
-        Font font=new Font("ËÎÌå",Font.PLAIN,12); // ¶¨Òå×ÖÌå¶ÔÏó
+        Graphics2D graphics = (Graphics2D) g;  //×ªï¿½ï¿½graphics ÎªGraphics2Dï¿½ï¿½ï¿½ï¿½
+        Font font=new Font("ï¿½ï¿½ï¿½ï¿½",Font.PLAIN,12); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         graphics.setFont(font);
-        BasicStroke bk=new BasicStroke(10,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL); //×Ô¶¨Òå±Ê»­¶ÔÏó
-        graphics.setStroke(bk);  //ÉèÖÃgraphicsµÄ±Ê»­¶ÔÏó;
+        BasicStroke bk=new BasicStroke(10,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL); //ï¿½Ô¶ï¿½ï¿½ï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½
+        graphics.setStroke(bk);  //ï¿½ï¿½ï¿½ï¿½graphicsï¿½Ä±Ê»ï¿½ï¿½ï¿½ï¿½ï¿½;
         int n=words.size();
         int RR=400;
         double R=50,P;
