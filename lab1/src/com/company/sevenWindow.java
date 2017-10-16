@@ -14,6 +14,7 @@ public class sevenWindow {
 	private JFrame frame;
 	private JTextField textField;
 private int r;
+	private int p;
 	/**
 	 * Launch the application.
 	 */
