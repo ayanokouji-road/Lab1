@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 public class Graph
 {
     int n;
+    int t;
     public ArrayList<String> words;
     public int [][] edges;
     Map<String,Integer> mark = new HashMap<String, Integer>();
