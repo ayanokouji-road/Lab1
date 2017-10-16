@@ -1,3 +1,4 @@
+//DrawpathAll.3.5
 package com.company;
 
 import javax.imageio.ImageIO;
@@ -28,14 +29,14 @@ public class DrawpathAll extends JFrame
         this.edges=edges;
         this.pathNum=paths.length;
         int y=90;
-        if (pathlength.length==1) {//¶ÔÓÚ1¶Ô1×î¶ÌÂ·¾¶µÄÇé¿ö
+        if (pathlength.length==1) {//ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½1ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         	 for(int i = 0 ;i<pathNum;i++){
 		        	if(paths[i]==null) continue;
 		        	JLabel jLabel = new JLabel(paths[i]+":::length = "+pathlength[0]);
 		            jLabel.setBounds(150,y+15*i, 400, 30);
 		            add(jLabel);
 		        }
-		}else{//¶ÔÓÚ1¶Ôn×î¶ÌÂ·¾¶µÄÇé¿ö
+		}else{//ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½nï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			 for(int i = 0 ;i<pathNum;i++){
 		        	if(paths[i]==null) continue;
 		        	JLabel jLabel = new JLabel(paths[i]+":::length = "+pathlength[i]);
@@ -46,7 +47,7 @@ public class DrawpathAll extends JFrame
         nodes=new String[pathNum][];
         this.paths=paths;
         this.words=words;
-        button= new Button("·µ»Ø");
+        button= new Button("ï¿½ï¿½ï¿½ï¿½");
         JPanel jPanel=(JPanel)this.getContentPane();
         jPanel.setLayout(null);
         button.setBounds(1600, 800, 100, 30);
@@ -65,7 +66,7 @@ public class DrawpathAll extends JFrame
         	paths[i].toLowerCase();
         	nodes[i]=paths[i].split("\\s+");
         }
-        setTitle("»æÖÆÂ·¾¶");
+        setTitle("ï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½");
         setBounds(0,0,2000,1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
@@ -91,11 +92,11 @@ public class DrawpathAll extends JFrame
     public void paint(Graphics g)
     {
         super.paint(g);
-        Graphics2D graphics = (Graphics2D) g;  //×ª»¯graphics ÎªGraphics2D¶ÔÏó
-        Font font=new Font("ËÎÌå",Font.PLAIN,12); // ¶¨Òå×ÖÌå¶ÔÏó
+        Graphics2D graphics = (Graphics2D) g;  //×ªï¿½ï¿½graphics ÎªGraphics2Dï¿½ï¿½ï¿½ï¿½
+        Font font=new Font("ï¿½ï¿½ï¿½ï¿½",Font.PLAIN,12); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         graphics.setFont(font);
-        BasicStroke bk=new BasicStroke(10,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL); //×Ô¶¨Òå±Ê»­¶ÔÏó
-        graphics.setStroke(bk);  //ÉèÖÃgraphicsµÄ±Ê»­¶ÔÏó;
+        BasicStroke bk=new BasicStroke(10,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL); //ï¿½Ô¶ï¿½ï¿½ï¿½Ê»ï¿½ï¿½ï¿½ï¿½ï¿½
+        graphics.setStroke(bk);  //ï¿½ï¿½ï¿½ï¿½graphicsï¿½Ä±Ê»ï¿½ï¿½ï¿½ï¿½ï¿½;
         int n=words.size();
         int RR=400;
         double R=50,P;
